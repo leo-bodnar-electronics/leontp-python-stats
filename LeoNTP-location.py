@@ -1,7 +1,7 @@
 #
 # displays current statistics of the LeoNTP server using private mode 7 request
 #
-# run as "python LeoNTP-stats-full.py SERVER_NAME"
+# run as "python LeoNTP-location.py SERVER_NAME"
 #
 
 print("## LeoNTP Location Utility ##")
@@ -101,6 +101,8 @@ except:
     print("Unable to contact LeoNTP at " + IPADDR)
     quit()
 
+
+print (RX_PACKET)
 
 lon 		= struct.unpack('<i',RX_PACKET[16:20])[0] / 10000000.0
 lat 		= struct.unpack('<i',RX_PACKET[20:24])[0] / 10000000.0
