@@ -103,6 +103,8 @@ except:
 
 
 print (RX_PACKET)
+print ("\n\n")
+print (','.join([hex(i) for i in RX_PACKET]))
 
 lon 		= struct.unpack('<i',RX_PACKET[16:20])[0] / 10000000.0
 lat 		= struct.unpack('<i',RX_PACKET[20:24])[0] / 10000000.0
